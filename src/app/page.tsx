@@ -1,5 +1,7 @@
+import GetItSoldPage from "@/components/homepage/GetItSoldPage";
 import Navbar from "@/components/Navbar";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -45,34 +47,63 @@ export default function Home() {
           </main>
         </div>
       </div>
-      <section className="bg-white py-20 px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-            Recent Properties
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div
-                key={item}
-                className="bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="h-48 bg-gradient-to-br from-gray-300 to-gray-400"></div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                    Property {item}
-                  </h3>
-                  <p className="text-gray-600 mb-2">
-                    123 Desert View Lane, Pahrump, NV
-                  </p>
-                  <p className="text-2xl font-bold text-black">
-                    ${(250000 + item * 50000).toLocaleString()}
-                  </p>
-                </div>
-              </div>
-            ))}
+      <section className="bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
+          {/* Image */}
+          <div className="h-full overflow-hidden">
+            <Image
+              src="/homepage/hero-section/marci_metzger.webp"
+              alt="Marci Metzger"
+              width={1000}
+              height={1000}
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="text-black space-y-8 p-24 flex flex-col justify-center">
+            <div>
+              <h1 className="text-8xl subtitle">Marci Metzger</h1>
+              <p className="text-lg font-bold mt-2 subtitle ms-2">
+                REALTOR FOR NEARLY 3 DECADES!
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">In Her Words</h3>
+              <p className="italic">
+                "I love that small-town feeling that our community offers.
+                Spectacular golf courses, parks, pool, and easy access to Las
+                Vegas make Pahrump a great place to call home. Working or
+                retired, fast-paced or looking to relax... there's a place for
+                you here! I enjoy living in the Mountain Falls community and
+                will strive to find you a home that will suit you just as this
+                community does me."
+              </p>
+            </div>
+
+            {/* Call Now Button */}
+            <div className="flex justify-center">
+              <button className="relative overflow-hidden group bg-black text-white text-xs py-5 px-8 uppercase tracking-widest cursor-pointer inline-flex items-center gap-4 rounded-md border border-black">
+                {/* Text & Number */}
+                <span className="relative z-10 flex items-center gap-3 transition-colors duration-500 group-hover:text-black">
+                  <span className="font-semibold text-sm">Call Now</span>
+                  <span className="font-light">206-919-6886</span>
+                </span>
+
+                {/* Arrow */}
+                <ArrowRight
+                  size={16}
+                  className="relative z-10 transform transition-transform duration-300 group-hover:translate-x-2 group-hover:text-black"
+                />
+
+                {/* Hover overlay */}
+                <span className="absolute inset-0 bg-white transform -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
+      <GetItSoldPage />
     </div>
   );
 }
