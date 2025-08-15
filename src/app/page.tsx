@@ -1,5 +1,6 @@
 import GetItSoldPage from "@/components/homepage/GetItSoldPage";
 import PhotoGallery from "@/components/homepage/PhotoGallery";
+import SearchListing from "@/components/homepage/SearchListing";
 import Navbar from "@/components/Navbar";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -106,6 +107,7 @@ export default function Home() {
       </section>
       <GetItSoldPage />
       <PhotoGallery />
+      <SearchListing />
     </div>
   );
 }
