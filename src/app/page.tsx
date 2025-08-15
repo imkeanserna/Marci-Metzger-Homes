@@ -1,13 +1,15 @@
+import Footer from "@/components/homepage/Footer";
 import GetItSoldPage from "@/components/homepage/GetItSoldPage";
 import PhotoGallery from "@/components/homepage/PhotoGallery";
 import SearchListing from "@/components/homepage/SearchListing";
+import ServicesSection from "@/components/homepage/Services";
 import Navbar from "@/components/Navbar";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className=" font-sans">
+    <div className="font-sans">
       <div className="relative w-full h-screen overflow-hidden">
         {/* Background Video */}
         <video
@@ -27,8 +29,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50 z-0"></div>
 
         {/* Main content */}
+        <Navbar />
         <div className="relative z-10 flex flex-col min-h-screen">
-          <Navbar />
           <main className="flex flex-col gap-8 flex-1 items-center justify-center text-white space-y-16 mt-28">
             <div className="space-y-12">
               <h1 className="text-8xl subtitle">Pahrump Realtor</h1>
@@ -108,6 +110,8 @@ export default function Home() {
       <GetItSoldPage />
       <PhotoGallery />
       <SearchListing />
+      <ServicesSection />
+      <Footer />
     </div>
   );
 }

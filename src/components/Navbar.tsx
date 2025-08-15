@@ -82,7 +82,7 @@ export default function Navbar() {
           <span
             className={`text-sm tracking-wide ${isOutsideHero ? "text-black" : "text-white"}`}
           >
-            (747) 888-0508
+            (206) 919-6886
           </span>
           <button onClick={() => setMenuOpen(!menuOpen)}>
             <Menu
