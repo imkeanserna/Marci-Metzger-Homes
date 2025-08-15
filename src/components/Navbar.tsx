@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -66,13 +67,15 @@ export default function Navbar() {
             href="/"
             className="flex-shrink-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2"
           >
-            <img
+            <Image
               src={
                 isOutsideHero
                   ? "/homepage/hero-section/logo-black.webp"
                   : "/homepage/hero-section/logo-white.webp"
               }
               alt="Logo"
+              width={250}
+              height={150}
               className={`object-contain transition-all duration-300 ${
                 isScrolled
                   ? "w-[120px] h-[60px] md:w-[180px] md:h-[90px]"
@@ -149,15 +152,18 @@ export default function Navbar() {
           <div>
             {/* Logo */}
             <div className="flex justify-center mb-8">
-              <img
-                src={
-                  isOutsideHero
-                    ? "/homepage/hero-section/logo-black.webp"
-                    : "/homepage/hero-section/logo-white.webp"
-                }
-                alt="Logo"
-                className="w-32 h-16 object-contain"
-              />
+              <div className="relative w-32 h-16">
+                <Image
+                  src={
+                    isOutsideHero
+                      ? "/homepage/hero-section/logo-black.webp"
+                      : "/homepage/hero-section/logo-white.webp"
+                  }
+                  alt="Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
 
             {/* Navigation Links */}

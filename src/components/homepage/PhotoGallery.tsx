@@ -9,6 +9,7 @@ import {
   Maximize2,
   MapPin,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function PhotoGallery({
   images = [
@@ -108,7 +109,7 @@ export default function PhotoGallery({
           {/* Navigation Arrows */}
           <button
             onClick={handlePrevious}
-            className="absolute left-4 lg:-left-20 top-1/3 transform -translate-y-1/2 z-20 bg-black/40 backdrop-blur-xl hover:bg-black/60 transition-all duration-300 rounded-full p-4 text-white hover:scale-110 shadow-2xl border border-white/10 cursor-pointer"
+            className="absolute -left-5 lg:-left-20 top-1/5 md:top-1/3 transform -translate-y-1/2 z-20 bg-black/40 backdrop-blur-xl hover:bg-black/60 transition-all duration-300 rounded-full p-4 text-white hover:scale-110 shadow-2xl border border-white/10 cursor-pointer"
             disabled={isTransitioning}
             aria-label="Previous image"
           >
@@ -117,7 +118,7 @@ export default function PhotoGallery({
 
           <button
             onClick={handleNext}
-            className="absolute right-4 lg:-right-20 top-1/3 cursor-pointer transform -translate-y-1/2 z-20 bg-black/40 backdrop-blur-xl hover:bg-black/60 transition-all duration-300 rounded-full p-4 text-white hover:scale-110 shadow-2xl border border-white/10"
+            className="absolute -right-5 lg:-right-20 top-1/5 md:top-1/3 cursor-pointer transform -translate-y-1/2 z-20 bg-black/40 backdrop-blur-xl hover:bg-black/60 transition-all duration-300 rounded-full p-4 text-white hover:scale-110 shadow-2xl border border-white/10"
             disabled={isTransitioning}
             aria-label="Next image"
           >
@@ -139,10 +140,11 @@ export default function PhotoGallery({
                     key={index}
                     className="w-full h-full flex-shrink-0 relative"
                   >
-                    <img
+                    <Image
                       src={image}
                       alt={`${propertyTitle} - Image ${index + 1}`}
-                      className="w-full h-full object-cover transition-opacity duration-300"
+                      fill
+                      className="object-cover transition-opacity duration-300"
                     />
                     {/* Elegant gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
@@ -210,11 +212,14 @@ export default function PhotoGallery({
                     : "border-white/20 hover:border-white/40"
                 }`}
               >
-                <img
-                  src={image}
-                  alt={`Thumbnail ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={image}
+                    alt={`Thumbnail ${index + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </button>
             ))}
           </div>
@@ -223,30 +228,41 @@ export default function PhotoGallery({
           <div className="mt-28">
             <div className="flex flex-col md:flex-row gap-10 justify-center items-center md:divide-x-2 divide-white">
               <div className="flex items-center justify-center px-8 md:px-12 lg:px-20 py-4">
-                <img
+                <Image
                   src="/homepage/clients/client1.webp"
                   alt="Client 1"
+                  width={112}
+                  height={128}
                   className="h-28 md:h-32 w-auto object-contain"
                 />
               </div>
+
               <div className="flex items-center justify-center px-8 md:px-12 lg:px-20 py-4">
-                <img
+                <Image
                   src="/homepage/clients/client2.webp"
                   alt="Client 2"
+                  width={112}
+                  height={128}
                   className="h-28 md:h-32 w-auto object-contain filter brightness-0 invert"
                 />
               </div>
+
               <div className="flex items-center justify-center px-8 md:px-12 lg:px-20 py-4">
-                <img
+                <Image
                   src="/homepage/clients/client3.webp"
                   alt="Client 3"
+                  width={112}
+                  height={128}
                   className="h-28 md:h-32 w-auto object-contain rounded-lg"
                 />
               </div>
+
               <div className="flex items-center justify-center px-8 md:px-12 lg:px-20 py-4">
-                <img
+                <Image
                   src="/homepage/clients/client4.webp"
                   alt="Client 4"
+                  width={112}
+                  height={128}
                   className="h-28 md:h-32 w-auto object-contain rounded-lg"
                 />
               </div>
