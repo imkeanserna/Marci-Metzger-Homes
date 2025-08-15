@@ -8,10 +8,10 @@ export default function GetItSoldPage() {
       {/* Black fade at the top */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/50 to-transparent z-10"></div>
       {/* Header Section with Enhanced Typography */}
-      <div className="text-center py-20 px-4 relative overflow-hidden">
+      <div className="text-center py-12 md:py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white opacity-50"></div>
         <div className="relative z-10">
-          <h1 className="text-6xl md:text-8xl font-light text-gray-900 tracking-[0.2em] mb-4 subtitle">
+          <h1 className="text-5xl md:text-8xl font-light text-gray-900 tracking-[0.2em] mb-4 subtitle">
             GET IT SOLD
           </h1>
           <div className="w-32 h-px bg-black mx-auto"></div>
@@ -19,7 +19,7 @@ export default function GetItSoldPage() {
       </div>
 
       {/* Top Residential Sales Section */}
-      <section className="max-w-7xl mx-auto px-4 py-20 relative">
+      <section className="max-w-7xl mx-auto px-4 py-10 md:py-20 relative">
         {/* Floating decorative elements */}
         <div className="absolute top-10 right-10 w-4 h-4 bg-black rotate-45 opacity-20 animate-pulse hidden md:block"></div>
         <div className="absolute bottom-20 left-16 w-6 h-6 bg-black rounded-full opacity-10 hidden md:block"></div>

@@ -34,7 +34,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-slate-50 to-white py-32 font-sans">
+    <section className="bg-gradient-to-b from-slate-50 to-white py-16 md:py-32 font-sans">
       <div className="max-w-7xl mx-auto px-8 lg:px-16">
         {/* Header */}
         <div className="text-center mb-20">
@@ -117,7 +117,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-32">
+        <div className="text-center mt-16 md:mt-32">
           <div className="bg-white border border-gray-200 p-16 space-y-8 shadow-lg">
             <h2 className="text-4xl md:text-6xl font-light tracking-[0.05em]">
               <span className="bg-gradient-to-r from-gray-900 via-black to-gray-900 bg-clip-text text-transparent">

@@ -61,7 +61,7 @@ export default function SearchListing() {
   return (
     <div className="min-h-screen">
       <section
-        className="relative min-h-screen bg-cover bg-center bg-fixed"
+        className="relative min-h-screen bg-cover bg-center bg-fixed py-8 lg:py-2"
         style={{
           backgroundImage:
             "url('/homepage/listing-search/search-listing-background.jpg')",
@@ -140,7 +140,7 @@ export default function SearchListing() {
 
               <button
                 onClick={handleSearch}
-                className="relative overflow-hidden group bg-amber-500 text-white text-xs px-8 uppercase tracking-widest cursor-pointer flex items-center gap-3 rounded-md border border-amber-500"
+                className="relative overflow-hidden group bg-amber-500 text-white py-6 md:py-0 text-xs px-8 uppercase tracking-widest cursor-pointer flex items-center gap-3 rounded-md border border-amber-500"
               >
                 <Search className="w-4 h-4 relative z-10 transform transition-transform group-hover:text-black" />
                 <span className="relative z-10 transition-colors duration-500 group-hover:text-black">

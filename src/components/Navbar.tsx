@@ -38,17 +38,19 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 px-12 left-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 px-4 md:px-12 left-0 w-full z-50 transition-all duration-300 ${
           isOutsideHero
-            ? "bg-white shadow-lg text-black"
+            ? "bg-white shadow-lg text-black py-2 md:py-3"
             : isScrolled
-              ? "bg-black/90 backdrop-blur-md shadow-lg text-white"
+              ? "bg-black/90 backdrop-blur-md shadow-lg text-white py-2 md:py-3"
               : "bg-transparent py-4 text-white"
         } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <div className="flex items-center justify-between px-6">
-          {/* Left side links */}
-          <div className="flex items-center gap-10">
+        <div
+          className={`flex items-center justify-between px-2 md:px-6 relative ${isScrolled ? "py-0 md:py-4" : "py-2 md:py-12"}`}
+        >
+          {/* Left side links - Hidden on mobile */}
+          <div className="hidden md:flex items-center gap-10">
             <a href="#" className={linkClasses}>
               Our Properties
             </a>
@@ -56,8 +58,12 @@ export default function Navbar() {
               Meet the Team
             </a>
           </div>
-          {/* Center logo */}
-          <a href="/" className="flex-shrink-0">
+
+          {/* Mobile: Logo on left, Desktop: Center logo */}
+          <a
+            href="/"
+            className="flex-shrink-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2"
+          >
             <img
               src={
                 isOutsideHero
@@ -66,20 +72,26 @@ export default function Navbar() {
               }
               alt="Logo"
               className={`object-contain transition-all duration-300 ${
-                isScrolled ? "w-[180px] h-[90px]" : "w-[250px] h-[150px]"
+                isScrolled
+                  ? "w-[120px] h-[60px] md:w-[180px] md:h-[90px]"
+                  : "w-[160px] h-[80px] md:w-[250px] md:h-[150px]"
               }`}
             />
           </a>
-          {/* Right side */}
-          <div className="flex items-center gap-10">
-            <a href="#" className={linkClasses}>
+
+          {/* Right side - Contact and phone hidden on mobile */}
+          <div className="flex items-center gap-4 md:gap-10">
+            {/* Contact link - Hidden on mobile */}
+            <a href="#" className={`hidden md:block ${linkClasses}`}>
               Contact Us
             </a>
+            {/* Phone number - Hidden on mobile */}
             <span
-              className={`text-sm tracking-wide ${isOutsideHero ? "text-black" : "text-white"}`}
+              className={`hidden md:block text-sm tracking-wide ${isOutsideHero ? "text-black" : "text-white"}`}
             >
               (206) 919-6886
             </span>
+            {/* Hamburger menu - Always visible */}
             <button onClick={() => setMenuOpen(!menuOpen)}>
               <Menu
                 className={`w-6 h-6 cursor-pointer ${isOutsideHero ? "text-black" : "text-white"}`}
@@ -89,15 +101,15 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Side Menu - Higher z-index and ensure background is solid */}
+      {/* Side Menu - Responsive width */}
       <div
-        className={`fixed top-0 right-0 h-screen w-1/4 transform transition-all duration-500 ease-in-out z-50 flex flex-col justify-between ${
+        className={`fixed top-0 right-0 h-screen transform transition-all duration-500 ease-in-out z-50 flex flex-col justify-between ${
           menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         } ${
           isOutsideHero
             ? "bg-white text-black shadow-2xl"
             : "bg-black text-white shadow-2xl"
-        }`}
+        } w-full sm:w-80 md:w-1/4`}
         style={{
           pointerEvents: menuOpen ? "auto" : "none",
           backgroundColor: isOutsideHero ? "#ffffff" : "#000000",
@@ -130,7 +142,7 @@ export default function Navbar() {
         </div>
 
         {/* Menu Content */}
-        <div className="px-16 py-4 flex-1 flex flex-col justify-between">
+        <div className="px-8 md:px-16 py-4 flex-1 flex flex-col justify-between">
           <div>
             {/* Logo */}
             <div className="flex justify-center mb-8">
@@ -178,6 +190,28 @@ export default function Navbar() {
                 }`}
                 onClick={() => setMenuOpen(false)}
               >
+                Our Properties
+              </a>
+              <a
+                href="#"
+                className={`block uppercase text-sm font-light tracking-wider py-3 px-4 transition-all duration-300 transform hover:scale-105 border-b ${
+                  isOutsideHero
+                    ? "hover:bg-gray-50 text-black border-black/20"
+                    : "hover:bg-white/10 text-white border-white/20"
+                }`}
+                onClick={() => setMenuOpen(false)}
+              >
+                Meet the Team
+              </a>
+              <a
+                href="#"
+                className={`block uppercase text-sm font-light tracking-wider py-3 px-4 transition-all duration-300 transform hover:scale-105 border-b ${
+                  isOutsideHero
+                    ? "hover:bg-gray-50 text-black border-black/20"
+                    : "hover:bg-white/10 text-white border-white/20"
+                }`}
+                onClick={() => setMenuOpen(false)}
+              >
                 Let's Move
               </a>
               <a
@@ -196,14 +230,14 @@ export default function Navbar() {
 
           {/* Contact Info + CTA Button */}
           <div className="pt-8 mt-8">
-            <div className="space-y-3 flex justify-between items-center">
+            <div className="space-y-3 flex flex-row justify-between items-center">
               <p className="text-sm opacity-70">
                 Marci Metzger
                 <br />
                 The Ridge Realty Group
               </p>
 
-              <div>
+              <div className="mt-0">
                 <h3 className="text-sm font-light uppercase tracking-wider opacity-70">
                   Contact
                 </h3>

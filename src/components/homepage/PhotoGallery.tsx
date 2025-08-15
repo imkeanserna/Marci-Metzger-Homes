@@ -85,14 +85,14 @@ const PhotoGallery = ({
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 text-amber-400 mb-4">
             <MapPin className="w-5 h-5" />
-            <span className="text-sm font-medium tracking-wider uppercase">
+            <span className="text-xs md:text-sm font-medium tracking-wider uppercase">
               {location}
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-4 tracking-[0.15em]">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-light text-white mb-4 tracking-[0.15em]">
             {propertyTitle}
           </h1>
-          <p className="text-2xl md:text-3xl text-amber-400 font-light tracking-wider">
+          <p className="text-xl md:text-3xl text-amber-400 font-light tracking-wider">
             {price}
           </p>
         </div>
@@ -216,33 +216,33 @@ const PhotoGallery = ({
 
           {/* Clients Section */}
           <div className="mt-28">
-            <div className="flex justify-center items-center">
-              <div className="px-8 md:px-12 lg:px-20 flex items-center justify-center border-r-2 border-white">
+            <div className="flex flex-col md:flex-row gap-10 justify-center items-center md:divide-x-2 divide-white">
+              <div className="flex items-center justify-center px-8 md:px-12 lg:px-20 py-4">
                 <img
                   src="/homepage/clients/client1.webp"
                   alt="Client 1"
-                  className="h-12 md:h-32 w-auto object-contain"
+                  className="h-28 md:h-32 w-auto object-contain"
                 />
               </div>
-              <div className="px-8 md:px-12 lg:px-20 flex items-center justify-center border-r-2 border-white">
+              <div className="flex items-center justify-center px-8 md:px-12 lg:px-20 py-4">
                 <img
                   src="/homepage/clients/client2.webp"
                   alt="Client 2"
-                  className="h-12 md:h-32 w-auto object-contain filter brightness-0 invert"
+                  className="h-28 md:h-32 w-auto object-contain filter brightness-0 invert"
                 />
               </div>
-              <div className="px-8 md:px-12 lg:px-20 flex items-center justify-center border-r-2 border-white">
+              <div className="flex items-center justify-center px-8 md:px-12 lg:px-20 py-4">
                 <img
                   src="/homepage/clients/client3.webp"
                   alt="Client 3"
-                  className="h-12 md:h-32 w-auto object-contain rounded-lg"
+                  className="h-28 md:h-32 w-auto object-contain rounded-lg"
                 />
               </div>
-              <div className="px-8 md:px-12 lg:px-20 flex items-center justify-center">
+              <div className="flex items-center justify-center px-8 md:px-12 lg:px-20 py-4">
                 <img
                   src="/homepage/clients/client4.webp"
                   alt="Client 4"
-                  className="h-12 md:h-32 w-auto object-contain rounded-lg"
+                  className="h-28 md:h-32 w-auto object-contain rounded-lg"
                 />
               </div>
             </div>

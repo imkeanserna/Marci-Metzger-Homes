@@ -32,8 +32,8 @@ export default function Home() {
         <Navbar />
         <div className="relative z-10 flex flex-col min-h-screen">
           <main className="flex flex-col gap-8 flex-1 items-center justify-center text-white space-y-16 mt-28">
-            <div className="space-y-12">
-              <h1 className="text-8xl subtitle">Pahrump Realtor</h1>
+            <div className="space-y-12 text-center">
+              <h1 className="text-7xl lg:text-8xl subtitle">Pahrump Realtor</h1>
               <p className="text-sm font-medium max-w-2xl text-center tracking-wider">
                 Marci Metzger - The Ridge Realty Group
               </p>
@@ -52,9 +52,9 @@ export default function Home() {
         </div>
       </div>
       <section className="bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           {/* Image */}
-          <div className="h-full overflow-hidden">
+          <div className="px-8 pt-8 md:p-0 h-96 lg:h-full overflow-hidden">
             <Image
               src="/homepage/hero-section/marci_metzger.webp"
               alt="Marci Metzger"
@@ -65,16 +65,21 @@ export default function Home() {
           </div>
 
           {/* Content */}
-          <div className="text-black space-y-8 p-24 flex flex-col justify-center">
+          <div className="text-black space-y-6 sm:space-y-8 p-6 sm:p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col justify-center">
             <div>
-              <h1 className="text-8xl subtitle">Marci Metzger</h1>
-              <p className="text-lg font-bold mt-2 subtitle ms-2">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl subtitle leading-tight text-center sm:text-start">
+                Marci Metzger
+              </h1>
+              <p className="text-sm sm:text-base lg:text-lg font-bold mt-2 subtitle ms-1 sm:ms-2 text-center sm:text-start">
                 REALTOR FOR NEARLY 3 DECADES!
               </p>
             </div>
+
             <div>
-              <h3 className="text-lg font-semibold mb-2">In Her Words</h3>
-              <p className="italic">
+              <h3 className="text-base sm:text-lg font-semibold mb-2">
+                In Her Words
+              </h3>
+              <p className="italic text-sm sm:text-base leading-relaxed">
                 "I love that small-town feeling that our community offers.
                 Spectacular golf courses, parks, pool, and easy access to Las
                 Vegas make Pahrump a great place to call home. Working or
@@ -86,20 +91,22 @@ export default function Home() {
             </div>
 
             {/* Call Now Button */}
-            <div className="flex justify-center">
-              <button className="relative overflow-hidden group bg-black text-white text-xs py-5 px-8 uppercase tracking-widest cursor-pointer inline-flex items-center gap-4 rounded-md border border-black">
+            <div className="flex justify-center pt-4">
+              <button className="relative overflow-hidden group bg-black text-white text-xs py-4 sm:py-5 px-6 sm:px-8 uppercase tracking-widest cursor-pointer inline-flex items-center gap-3 sm:gap-4 rounded-md border border-black w-full sm:w-auto justify-center">
                 {/* Text & Number */}
-                <span className="relative z-10 flex items-center gap-3 transition-colors duration-500 group-hover:text-black">
-                  <span className="font-semibold text-sm">Call Now</span>
-                  <span className="font-light">206-919-6886</span>
+                <span className="relative z-10 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 transition-colors duration-500 group-hover:text-black">
+                  <span className="font-semibold text-xs sm:text-sm">
+                    Call Now
+                  </span>
+                  <span className="font-light text-xs sm:text-sm">
+                    206-919-6886
+                  </span>
                 </span>
-
                 {/* Arrow */}
                 <ArrowRight
                   size={16}
                   className="relative z-10 transform transition-transform duration-300 group-hover:translate-x-2 group-hover:text-black"
                 />
-
                 {/* Hover overlay */}
                 <span className="absolute inset-0 bg-white transform -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
               </button>
