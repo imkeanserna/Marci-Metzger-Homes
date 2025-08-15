@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function GetItSoldPage() {
   return (
-    <div className="min-h-screen bg-white relative">
+    <div className="min-h-screen bg-white relative pb-16">
       {/* Black fade at the top */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/50 to-transparent z-10"></div>
       {/* Header Section with Enhanced Typography */}
@@ -26,7 +26,7 @@ export default function GetItSoldPage() {
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Enhanced Image with Hover Effects */}
-          <div className="relative group overflow-hidden rounded-lg">
+          <div className="relative group overflow-hidden">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-700 z-10"></div>
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20 flex items-center justify-center">
               <div className="text-white text-center space-y-4">
@@ -148,11 +148,19 @@ export default function GetItSoldPage() {
                     <Home className="w-6 h-6 text-white group-hover/card:text-black transition-colors duration-500" />
                   </div>
 
-                  <p className="text-lg opacity-90 subtitle italic text-center leading-relaxed group-hover/card:scale-105 transition-transform duration-500">
-                    We exhaust every avenue to ensure our listings are at the
-                    fingertips of every possible buyer, getting you top dollar
-                    for your home.
-                  </p>
+                  <div className="relative pl-6 border-l-2 border-white/20 group-hover:border-white transition-colors duration-500">
+                    <p className="text-lg opacity-90 subtitle italic text-left relative text-white leading-relaxed">
+                      <span className="absolute -left-8 -top-4 text-5xl text-white/30 font-serif">
+                        "
+                      </span>
+                      We exhaust every avenue to ensure our listings are at the
+                      fingertips of every possible buyer, getting you top dollar
+                      for your home.
+                      <span className="absolute -bottom-8 -right-2 text-5xl text-white/30 font-serif">
+                        "
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -196,7 +204,7 @@ export default function GetItSoldPage() {
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Enhanced House Keys Image */}
-          <div className="relative group overflow-hidden rounded-lg shadow-2xl hover:shadow-3xl transition-shadow duration-700">
+          <div className="relative group overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-700">
             {/* Complex overlay system */}
             <div className="absolute inset-0 bg-gradient-to-br from-black/0 via-black/20 to-black/40 group-hover:from-black/30 group-hover:via-black/50 group-hover:to-black/70 transition-all duration-700 z-10"></div>
 
@@ -260,10 +268,19 @@ export default function GetItSoldPage() {
                   <p className="text-xl font-light mb-3 uppercase tracking-wider text-center group-hover/card:scale-105 transition-transform duration-500">
                     Market Expertise
                   </p>
-                  <p className="text-lg opacity-90 subtitle italic text-center group-hover/card:scale-105 transition-transform duration-500 delay-100">
-                    Nobody knows the market like we do. Enjoy having a pro at
-                    your service.
-                  </p>
+
+                  <div className="relative pl-6 border-l-2 border-gray-900/20 group-hover:border-white transition-colors duration-500 inline-block text-left">
+                    <p className="text-lg opacity-90 subtitle italic relative group-hover/card:scale-105 transition-transform duration-500 delay-100">
+                      <span className="absolute -left-8 -top-4 text-5xl font-serif">
+                        "
+                      </span>
+                      Nobody knows the market like we do. Enjoy having a pro at
+                      your service.
+                      <span className="absolute -bottom-8 -right-2 text-5xl font-serif">
+                        "
+                      </span>
+                    </p>
+                  </div>
                 </div>
 
                 {/* Subtle moving gradient */}
