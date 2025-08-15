@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-const ServicesSection = () => {
+export default function ServicesSection() {
   const services = [
     {
       id: 1,
@@ -160,6 +160,4 @@ const ServicesSection = () => {
       </div>
     </section>
   );
-};
-
-export default ServicesSection;
+}

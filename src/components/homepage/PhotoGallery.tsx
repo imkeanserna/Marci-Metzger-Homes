@@ -10,7 +10,7 @@ import {
   MapPin,
 } from "lucide-react";
 
-const PhotoGallery = ({
+export default function PhotoGallery({
   images = [
     "/homepage/photo-gallery/photo-gallery1.webp",
     "/homepage/photo-gallery/photo-gallery2.webp",
@@ -25,11 +25,17 @@ const PhotoGallery = ({
   propertyTitle = "Luxury Modern Villa",
   location = "Beverly Hills, CA",
   price = "$4,750,000",
-}) => {
+}: {
+  images?: string[];
+  autoPlay?: boolean;
+  autoPlayDelay?: number;
+  propertyTitle?: string;
+  location?: string;
+  price?: string;
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(autoPlay);
-  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     if (!isAutoPlaying) return;
@@ -137,7 +143,6 @@ const PhotoGallery = ({
                       src={image}
                       alt={`${propertyTitle} - Image ${index + 1}`}
                       className="w-full h-full object-cover transition-opacity duration-300"
-                      onLoad={() => setImageLoaded(true)}
                     />
                     {/* Elegant gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
@@ -251,6 +256,4 @@ const PhotoGallery = ({
       </div>
     </div>
   );
-};
-
-export default PhotoGallery;
+}

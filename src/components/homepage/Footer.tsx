@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import React from "react";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="bg-black text-white py-24 font-sans h-screen">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 bg-black">
@@ -143,6 +143,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

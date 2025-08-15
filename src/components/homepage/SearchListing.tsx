@@ -98,7 +98,6 @@ export default function SearchListing() {
             </p>
           </div>
 
-          {/* Enhanced Search Form */}
           <div className="w-full max-w-5xl bg-black/40 backdrop-blur-xl rounded-2xl shadow-2xl p-6 lg:p-8 border border-white/10">
             {/* Primary Search Bar */}
             <div className="flex flex-col lg:flex-row gap-4 mb-6">

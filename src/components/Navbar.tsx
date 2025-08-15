@@ -14,8 +14,10 @@ export default function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const videoSectionHeight = window.innerHeight;
+
       setIsScrolled(currentScrollY > 50);
       setIsOutsideHero(currentScrollY > videoSectionHeight);
+
       if (currentScrollY >= videoSectionHeight - 100) {
         if (currentScrollY < lastScrollY) {
           setIsVisible(true);
@@ -86,11 +88,12 @@ export default function Navbar() {
               Contact Us
             </a>
             {/* Phone number - Hidden on mobile */}
-            <span
+            <a
+              href="tel:206-919-6886"
               className={`hidden md:block text-sm tracking-wide ${isOutsideHero ? "text-black" : "text-white"}`}
             >
               (206) 919-6886
-            </span>
+            </a>
             {/* Hamburger menu - Always visible */}
             <button onClick={() => setMenuOpen(!menuOpen)}>
               <Menu

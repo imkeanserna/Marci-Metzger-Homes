@@ -3,7 +3,6 @@ import GetItSoldPage from "@/components/homepage/GetItSoldPage";
 import PhotoGallery from "@/components/homepage/PhotoGallery";
 import SearchListing from "@/components/homepage/SearchListing";
 import ServicesSection from "@/components/homepage/Services";
-import Navbar from "@/components/Navbar";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
@@ -25,11 +24,10 @@ export default function Home() {
           />
         </video>
 
-        {/* Overlay to darken video if needed */}
+        {/* Overlay to darken */}
         <div className="absolute inset-0 bg-black/50 z-0"></div>
 
         {/* Main content */}
-        <Navbar />
         <div className="relative z-10 flex flex-col min-h-screen">
           <main className="flex flex-col gap-8 flex-1 items-center justify-center text-white space-y-16 mt-28">
             <div className="space-y-12 text-center">
@@ -93,7 +91,6 @@ export default function Home() {
             {/* Call Now Button */}
             <div className="flex justify-center pt-4">
               <button className="relative overflow-hidden group bg-black text-white text-xs py-4 sm:py-5 px-6 sm:px-8 uppercase tracking-widest cursor-pointer inline-flex items-center gap-3 sm:gap-4 rounded-md border border-black w-full sm:w-auto justify-center">
-                {/* Text & Number */}
                 <span className="relative z-10 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 transition-colors duration-500 group-hover:text-black">
                   <span className="font-semibold text-xs sm:text-sm">
                     Call Now
@@ -102,12 +99,10 @@ export default function Home() {
                     206-919-6886
                   </span>
                 </span>
-                {/* Arrow */}
                 <ArrowRight
                   size={16}
                   className="relative z-10 transform transition-transform duration-300 group-hover:translate-x-2 group-hover:text-black"
                 />
-                {/* Hover overlay */}
                 <span className="absolute inset-0 bg-white transform -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
               </button>
             </div>
