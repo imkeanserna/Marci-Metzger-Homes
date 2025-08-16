@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Star } from "lucide-react";
 import React from "react";
 
 export default function Footer() {
@@ -97,7 +97,7 @@ export default function Footer() {
               {/* Social Media Icons */}
               <div className="flex space-x-4 pt-2">
                 <a
-                  href="https://facebook.com/yourpage"
+                  href="https://www.facebook.com/MarciHomes/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-all duration-300"
@@ -106,7 +106,7 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="https://instagram.com/yourpage"
+                  href="https://www.instagram.com/marciandlauren_nvrealtors/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-all duration-300"
@@ -115,12 +115,20 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/yourprofile"
+                  href="https://www.linkedin.com/in/marci-metzger-30642496/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-all duration-300"
                 >
                   <Linkedin size={16} />
+                </a>
+                <a
+                  href="https://www.yelp.com/biz/marci-metzger-the-ridge-realty-pahrump"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-all duration-300"
+                >
+                  <Star size={16} />
                 </a>
               </div>
             </div>
